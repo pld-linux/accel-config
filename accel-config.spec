@@ -1,13 +1,13 @@
 Summary:	Configure accelerator subsystem devices
 Summary(pl.UTF-8):	Konfiguracja urządzeń podsystemu akceleracji
 Name:		accel-config
-Version:	4.1.8
+Version:	4.1.9
 Release:	1
-License:	GPL v2
+License:	LGPL v2.1
 Group:		Applications/System
 #Source0Download: https://github.com/intel/idxd-config/releases (accel-config- tags)
 Source0:	https://github.com/intel/idxd-config/archive/%{name}-v%{version}/idxd-config-%{name}-v%{version}.tar.gz
-# Source0-md5:	261d7673da88d1b14a44020ea645ce43
+# Source0-md5:	25bf410ff858f34f496739eaebd937b1
 URL:		https://github.com/intel/idxd-config
 BuildRequires:	asciidoc
 BuildRequires:	autoconf >= 2.60
@@ -106,11 +106,11 @@ rm -rf $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %doc README.md SECURITY.md TODO licenses/{BSD-MIT,CC0,libaccel-config-licenses}
-%attr(755,root,root) %{_libdir}/libaccel-config.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libaccel-config.so.1
+%{_libdir}/libaccel-config.so.*.*.*
+%ghost %{_libdir}/libaccel-config.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libaccel-config.so
+%{_libdir}/libaccel-config.so
 %{_includedir}/accel-config
 %{_pkgconfigdir}/libaccel-config.pc
